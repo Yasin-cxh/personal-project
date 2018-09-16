@@ -1,3 +1,4 @@
+
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -15,7 +16,7 @@ using namespace std;
 /*全局变量定义*/
 unordered_map<string, int> strMap;
 
-
+/*文件输入到字符串*/
 /*统计行数*/
 
 /*统计单词个数及频率*/
@@ -31,11 +32,11 @@ int WordCount(char *argv)
 		strfile.append(stmp);
 		stmp.clear();
 
-		
+
 
 		//去除间隔符，单词统计
 		for (int i = 0; i < strfile.length(); i++)
-		{   
+		{
 			//小写处理
 			strfile[i] = tolower(strfile[i]);
 
@@ -76,7 +77,7 @@ int WordCount(char *argv)
 int main(int argc, char* argv[])
 {
 	//读入文件异常处理
-	if(argv == NULL)
+	if (argv == NULL)
 	{
 		cout << "error: you do not put a file " << endl;
 	}
@@ -88,7 +89,7 @@ int main(int argc, char* argv[])
 	//unordered_map<string, int> strMap;
 	int numCharCount = 0, numLineCount = 0, numWordCount = 0;
 
-	
+
 
 	numCharCount = Tool::CharCount(argv[1]);
 
@@ -121,7 +122,7 @@ int main(int argc, char* argv[])
 		{
 			if (count > 10)
 				break;
-			OutputFile << it->first << ':' << it->second << endl;
+			OutputFile << "<" << it->first << ">" << ':' << it->second << endl;
 			count++;
 		}
 		//cout << count << endl;
